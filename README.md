@@ -1,4 +1,4 @@
-# deku-textarea-autosize 
+# deku-textarea-autosize [![Build Status](https://travis-ci.org/micnews/deku-textarea-autosize.png?branch=master)](https://travis-ci.org/micnews/deku-textarea-autosize)
 
 Deku textarea component with automatic resizing
 
