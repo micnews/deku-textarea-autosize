@@ -23,6 +23,7 @@
     "babel-tape-runner": "^2.0.1",
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
+    "deku": "^1.0.0",
     "electron-prebuilt": "^0.37.3",
     "faucet": "0.0.1",
     "semistandard-deku": "github:micnews/semistandard#deku",
@@ -30,7 +31,10 @@
     "tape": "^4.5.1",
     "testron": "^1.2.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "autosize": "^3.0.15",
+    "magic-virtual-element": "^1.0.6"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/micnews/deku-textarea-autosize.git"
@@ -39,5 +43,5 @@
     "url": "https://github.com/micnews/deku-textarea-autosize/issues"
   },
   "homepage": "https://github.com/micnews/deku-textarea-autosize#readme",
-  "description": ""
+  "description": "Deku textarea component with automatic resizing"
 }
