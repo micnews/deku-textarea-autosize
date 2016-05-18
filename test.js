@@ -26,19 +26,20 @@ if (process.browser) {
     const app = tree(<TextareaAutosize>content</TextareaAutosize>);
     render(app, container);
 
-    const actual = container.querySelector('textarea').style.height;
-    const expected = '32px';
+    const initialHeight = Number(container.querySelector('textarea').style.height
+      .replace('px', ''));
 
-    t.is(actual, expected, 'initial size');
+    t.ok(initialHeight > 0, 'Initial height is greater than 0');
 
     app.mount(<TextareaAutosize>
       content content content content content content content content content content content content
     </TextareaAutosize>);
 
     process.nextTick(() => {
-      const actualResized = container.querySelector('textarea').style.height;
-      const expectedResized = '58px';
-      t.is(actualResized, expectedResized, 'resized');
+      const newHeight = Number(container.querySelector('textarea').style.height
+        .replace('px', ''));
+
+      t.ok(newHeight > initialHeight, 'New height is now greater than initial height');
       t.end();
     });
   });
@@ -51,17 +52,19 @@ if (process.browser) {
     </TextareaAutosize>);
     render(app, container);
 
-    const actual = container.querySelector('textarea').style.height;
-    const expected = '58px';
+    const initialHeight = Number(container.querySelector('textarea').style.height
+      .replace('px', ''));
 
-    t.is(actual, expected, 'initial size');
+    t.ok(initialHeight > 0, 'initial height is greater than 0');
 
     app.mount(<TextareaAutosize>content</TextareaAutosize>);
 
     process.nextTick(() => {
-      const actualResized = container.querySelector('textarea').style.height;
-      const expectedResized = '32px';
-      t.is(actualResized, expectedResized, 'resized');
+      const newHeight = Number(container.querySelector('textarea').style.height
+        .replace('px', ''));
+
+      t.ok(newHeight > 0, 'New height is greater than 0');
+      t.ok(newHeight < initialHeight, 'New height is now less than initial height');
       t.end();
     });
   });
