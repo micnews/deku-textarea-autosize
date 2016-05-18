@@ -1,6 +1,6 @@
 {
   "name": "deku-textarea-autosize",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
     "test": "npm run lint && npm run test:node && npm run test:browser",
